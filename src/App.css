@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+
+  /* align-items: center; */
+  justify-content: space-between;
+  /* font-size: 10px; */
 }
 
 .App-link {
@@ -35,4 +35,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Ingredient{
+  width: 150px;
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Ingredient:hover{
+  width: 160px;
+  height: 210px;
+  transition: 0.3s ease;
+}
+
+.Ingredient img{
+  height: 80px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+
+
+.Ingredient p{
+  margin: 0;
+  font-size: 10px;
+}
+
+.Ingredient span{
+  font-size: 14px;
+}
+
+.Steps{
+  overflow-y: scroll;
+  position: relative;
+  top: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.Ingredient:hover .Steps{
+  visibility: initial;
+  top: 0px;
+  transition: 0.3s ease;
+  opacity: 1;
 }
