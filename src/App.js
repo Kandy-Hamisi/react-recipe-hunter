@@ -50,10 +50,13 @@ function App() {
                 <span>{item.recipe.label}</span>
 
                 <img src={item.recipe.image} alt=""/>
-                <div className="Steps">
+                {/* <div className="Steps">
                   {item.recipe.ingredientLines.map((step)=>{
                     return <p>{step}</p>;
                   })}
+                </div> */}
+                <div className='btn btn-recipe'>
+                  <button>Get Recipe</button>
                 </div>
               </div>
             );
