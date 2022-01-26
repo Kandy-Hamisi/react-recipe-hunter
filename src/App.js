@@ -7,10 +7,19 @@ function App() {
   const APP_ID = "d114db93";
   const inputRef = useRef(null);
 
+  // mpesa credentials
+  const CONS_KEY = 'pjIhT9HvDvIwfAHiXjkv1wZJWIuTf1kf';
+  const CONS_SECRET = 'b4kN7Lh47TlsRkyc';
+
   const search = () => {
     // console.log("input ref", inputRef.current.value);
     searchForRecipe(inputRef.current.value);
   }
+
+  // mpesa integration
+  const generateToken = () => {
+    let credentials = 
+  };
 
   const searchForRecipe = (query) => {
     setLoading(true);
