@@ -18,7 +18,17 @@ function App() {
 
   // mpesa integration
   const generateToken = () => {
-    let credentials = 
+    let credentials = Buffer.from(`${CONS_KEY}:${CONS_SECRET}`).toString('base64');
+    console.log(credentials);
+    let authUrl = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    headers.append(`Authorization`, `Basic ${credentials}`);
+    console.log(headers);
+    fetch(authUrl, { headers })
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log(error));
   };
 
   const searchForRecipe = (query) => {
@@ -65,7 +75,7 @@ function App() {
                   })}
                 </div> */}
                 <div className='btn btn-recipe'>
-                  <button>Get Recipe</button>
+                  <button onClick={generateToken} >Get Recipe</button>
                 </div>
               </div>
             );
