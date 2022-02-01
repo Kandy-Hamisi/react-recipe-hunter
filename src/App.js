@@ -23,12 +23,13 @@ function App() {
     let authUrl = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
-    headers.append(`Authorization`, `Basic ${credentials}`);
-    console.log(headers);
+    let checking = headers.append(`Authorization`, `Basic ${credentials}`);
+    console.log(checking);
     fetch(authUrl, { headers })
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log(error));
+    
   };
 
   const searchForRecipe = (query) => {
